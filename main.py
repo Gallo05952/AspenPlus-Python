@@ -55,7 +55,7 @@ for portata in portata_ingresso:
 
 # STAMPA DEI RISULTATI SU UN FILE JSON E SU UN FILE EXCEL
 try:
-    base_name = "Risultati_T=-36_"
+    base_name = f"Risultati_T={T_cond}_CO2in=5_"
     nome_file = DatiOut().generate_filename(base_name,path_salvataggio)
     nome_file = os.path.join(path_salvataggio, nome_file)
     DatiOut().StampaJson(nome_file,da_scrivere)
