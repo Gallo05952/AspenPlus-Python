@@ -10,9 +10,9 @@ except Exception as e:
     print("Errore nell'apertura di Aspen: ", e)
 
 # DEFINIZIONE DELLE CONDIZIONI DI PROVA
-portata_ingresso =np.linspace(150, 300, 3)
+portata_ingresso =np.linspace(150, 300, 11)
 T_cond=-36
-p_cond=np.linspace(14, 18, 3)
+p_cond=np.linspace(14, 18, 11)
 da_scrivere=[]
 # CICLO DI SIMULAZIONE
 Input(aspen).InserimentoTemperaturaCond(T_cond)
@@ -55,7 +55,7 @@ for portata in portata_ingresso:
 
 # STAMPA DEI RISULTATI SU UN FILE JSON E SU UN FILE EXCEL
 try:
-    base_name = "Risultati_"
+    base_name = "Risultati_T=-36_"
     nome_file = DatiOut().generate_filename(base_name,path_salvataggio)
     nome_file = os.path.join(path_salvataggio, nome_file)
     DatiOut().StampaJson(nome_file,da_scrivere)
